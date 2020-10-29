@@ -3,9 +3,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
+
 urlpatterns =[
     url(r'^$', views.home, name = 'home'),
-    url(r'^categories/<str:cat>', views.categories, name='categories'),
+    url(r'^categories/(?P<slug>[-\w]+)$', views.categories, name='categories'),
 ]
 
 if settings.DEBUG:
