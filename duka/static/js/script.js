@@ -51,8 +51,17 @@ $(document).ready(function() {
 		$('[data-toggle="tooltip"]').tooltip()
 	} // end if
 
+/* Remove alert messages afer some time */
+    $(function () {
 
-
+        setTimeout(function () {
+                   if ($(".alert").is(":visible")){
+                        //you may add animate.css class for fancy fadeout
+                       $(".alert").fadeOut("fast");
+                   }
+               }, 3000)
+       
+       });
 
     
 }); 

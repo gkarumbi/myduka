@@ -39,13 +39,14 @@
             <div class="col-md-4">
 
                 <figure class="card card-product-grid card-lg">
-                    <div class="img-wrap"><img src="{{prod.product_image.url}}" alt=""></div>
+                    <div class="img-wrap"><img src="{{prod.imageURL}}" alt=""></div>
                     <figcaption class="info-wrap">
-                        <a class="title">{{prod.product_name}}</a>
+                        <a class="title" href="{{prod.get_absolute_url}}">{{prod.product_name}}</a>
                         <p class="text-muted">{{prod.product_brand}}</p>
                     </figcaption>
                     <div class="bottom-wrap">
-                        <a href="#" class="btn btn-primary float-right">Add to cart <i class="fa fa-shopping-cart"></i></a>
+                       <!--  {{prod.get_add_to_cart_url}} -->
+                        <a href="{{prod.get_add_to_cart_url}}" data-product="{{prod.id}}" data-action="add" class="btn btn-primary float-right update-cart">Add to cart <i class="fa fa-shopping-cart"></i></a>
                         <ul class="rating-stars">
                             <li style="width: 80%;" class="stars-active">
                                 <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
